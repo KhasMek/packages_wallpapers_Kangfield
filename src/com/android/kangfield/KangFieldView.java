@@ -1,16 +1,16 @@
-package com.android.noisefield;
+package com.android.kangfield;
 
 import android.content.Context;
 import android.renderscript.RSSurfaceView;
 import android.renderscript.RenderScriptGL;
 import android.view.SurfaceHolder;
 
-public class NoiseFieldView extends RSSurfaceView {
+public class KangFieldView extends RSSurfaceView {
 
     private RenderScriptGL mRS;
-    private NoiseFieldRS mRender;
+    private KangFieldRS mRender;
 
-    public NoiseFieldView(Context context) {
+    public KangFieldView(Context context) {
         super(context);
         setFocusable(true);
         setFocusableInTouchMode(true);
@@ -24,7 +24,7 @@ public class NoiseFieldView extends RSSurfaceView {
             mRS = createRenderScriptGL(sc);
             mRS.setSurface(holder, w, h);
 
-            mRender = new NoiseFieldRS();
+            mRender = new KangFieldRS();
             mRender.init(240, mRS, getResources(), w, h);
         }
     }

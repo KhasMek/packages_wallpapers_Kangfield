@@ -21,7 +21,7 @@ LOCAL_MODULE_TAGS := optional
 
 LOCAL_SRC_FILES := $(call all-subdir-java-files) $(call all-renderscript-files-under, src)
 
-LOCAL_PACKAGE_NAME := NoiseField
+LOCAL_PACKAGE_NAME := KangField
 LOCAL_CERTIFICATE := shared
 
 LOCAL_PROGUARD_FLAG_FILES := proguard.cfg

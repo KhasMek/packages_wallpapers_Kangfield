@@ -1,4 +1,4 @@
-package com.android.noisefield;
+package com.android.kangfield;
 
 import android.content.res.Resources;
 import android.graphics.Bitmap;
@@ -30,12 +30,12 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class NoiseFieldRS {
-    public static String LOG_TAG = "NoiseField";
+public class KangFieldRS {
+    public static String LOG_TAG = "KangField";
 
     private Resources mRes;
     private RenderScriptGL mRS;
-    private ScriptC_noisefield mScript;
+    private ScriptC_kangfield mScript;
     private int mHeight;
     private int mWidth;
     private boolean mTouchDown;
@@ -66,7 +66,7 @@ public class NoiseFieldRS {
         smb2.addVertexAllocation(mDotParticles.getAllocation());
 
         smb2.addIndexSetType(Mesh.Primitive.POINT);
-        mScript = new ScriptC_noisefield(mRS, mRes, R.raw.noisefield);
+        mScript = new ScriptC_kangfield(mRS, mRes, R.raw.kangfield);
 
         mDotMesh = smb2.create();
         mScript.set_dotMesh(mDotMesh);
@@ -181,7 +181,7 @@ public class NoiseFieldRS {
 
         ProgramVertex.Builder builder = new ProgramVertex.Builder(mRS);
         builder = new ProgramVertex.Builder(mRS);
-        builder.setShader(mRes, R.raw.noisefield_vs);
+        builder.setShader(mRes, R.raw.kangield_vs);
         builder.addConstant(mPvConsts.getType());
         builder.addInput(mDotMesh.getVertexAllocation(0).getType().getElement());
 
@@ -198,7 +198,7 @@ public class NoiseFieldRS {
         mScript.set_fragBg(programFragmentBackground);
 
         ProgramFragment.Builder builder = new ProgramFragment.Builder(mRS);
-        builder.setShader(mRes, R.raw.noisefield_fs);
+        builder.setShader(mRes, R.raw.kangfield_fs);
         builder.addTexture(Program.TextureType.TEXTURE_2D);
         ProgramFragment pf = builder.create();
         pf.bindSampler(Sampler.CLAMP_LINEAR(mRS), 0);

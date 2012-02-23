@@ -1,16 +1,16 @@
-package com.android.noisefield;
+package com.android.kangfield;
 
 import android.app.Activity;
 import android.os.Bundle;
 
-public class NoiseField extends Activity {
+public class KangField extends Activity {
 
-    private NoiseFieldView mView;
+    private KangFieldView mView;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mView = new NoiseFieldView(this);
+        mView = new KangFieldView(this);
         setContentView(mView);
     }
 }

@@ -1,4 +1,4 @@
-package com.android.noisefield;
+package com.android.kangfield;
 
 import android.app.Service;
 import android.graphics.PixelFormat;
@@ -13,7 +13,7 @@ import android.view.WindowManager;
 import android.util.Log;
 import android.view.MotionEvent;
 
-public class NoiseFieldWallpaper extends WallpaperService {
+public class KangFieldWallpaper extends WallpaperService {
 
     @Override
     public Engine onCreateEngine() {
@@ -22,7 +22,7 @@ public class NoiseFieldWallpaper extends WallpaperService {
 
     private class RenderScriptEngine extends Engine {
         private RenderScriptGL mRenderScript = null;
-        private NoiseFieldRS mWallpaperRS = null;
+        private KangFieldRS mWallpaperRS = null;
         private int mDensityDPI;
 
         @Override
@@ -62,7 +62,7 @@ public class NoiseFieldWallpaper extends WallpaperService {
             super.onSurfaceCreated(surfaceHolder);
 
             RenderScriptGL.SurfaceConfig sc = new RenderScriptGL.SurfaceConfig();
-            mRenderScript = new RenderScriptGL(NoiseFieldWallpaper.this, sc);
+            mRenderScript = new RenderScriptGL(KangFieldWallpaper.this, sc);
             mRenderScript.setPriority(RenderScript.Priority.LOW);
         }
 
@@ -84,7 +84,7 @@ public class NoiseFieldWallpaper extends WallpaperService {
             }
 
             if (mWallpaperRS == null) {
-                mWallpaperRS = new NoiseFieldRS();
+                mWallpaperRS = new KangFieldRS();
                 mWallpaperRS.init(mDensityDPI, mRenderScript, getResources(), width, height);
                 mWallpaperRS.start();
             }

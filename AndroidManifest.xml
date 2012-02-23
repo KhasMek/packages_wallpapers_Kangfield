@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-      package="com.android.noisefield"
+      package="com.android.kangfield"
       android:versionCode="1"
       android:versionName="1.0">
     <uses-sdk android:minSdkVersion="13" />
@@ -10,7 +10,7 @@
 
     <application android:icon="@drawable/icon" android:label="@string/wallpaper_label">
 		<service
-                android:name=".NoiseFieldWallpaper"
+                android:name=".KangFieldWallpaper"
                 android:label="@string/wallpaper_label"
                 android:launchMode="singleInstance"
                 android:permission="android.permission.BIND_WALLPAPER">
